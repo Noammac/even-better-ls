@@ -36,7 +36,7 @@ def get_colors():
 		OTHERWRITE	: color_char(230,-1,0xE612),
 		STOTHERWRITE: color_char(230,-1,0xE612),
 	}
-	
+
 	EXTENSION_LIST = {
 		"*README":		cc(220, -1, 0xE714),
 		"*README.rst":	cc(220, -1, 0xE714),
@@ -74,8 +74,8 @@ def get_colors():
 		".cbz":			cc(141, -1, 0xE299),
 		".chm":			cc(141, -1, 0xE299),
 		".djvu":		cc(141, -1, 0xE299),
-		".pdf":			cc(141, -1, 0xE299),
-		".PDF":			cc(141, -1, 0xE299),
+		".pdf":			cc(141, -1, 0xF411),
+		".PDF":			cc(141, -1, 0xF411),
 		".docm":		cc(111, -1, 0xF1C2, other="4"),
 		".doc":			cc(111, -1, 0xF1C2),
 		".docx":		cc(111, -1, 0xF1C2),
@@ -822,11 +822,11 @@ def get_colors():
 		".vcf":			cc(7, -1, 0xF10B),
 		".xln":			cc(7, -1, 0xF10B)
 
-		
+
 	}
-		
+
 	return FORMAT_COLORS, SPECIAL, EXTENSION_LIST
-	
+
 def cc(*args,**kwargs):
 	return color_char(*args,**kwargs)
 
@@ -907,4 +907,3 @@ if __name__ == "__main__":
 			else:
 				lsc += "*."+compname.lstrip("*.")+"="+comp+":"
 	sys.stdout.buffer.write(lsc.encode('utf-8'))
-	
