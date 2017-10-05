@@ -4824,7 +4824,7 @@ length_of_file_name_and_frills (const struct fileinfo *f)
     len += 1 + (format == with_commas ? strlen (f->scontext) : scontext_width);
 
   if (print_with_color)
-	len += 3;
+	len += 2;
 
   len += quote_name_width (f->name, filename_quoting_options, f->quoted);
 
