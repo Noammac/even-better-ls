@@ -16,33 +16,13 @@ It's more rational and safe to use GNU ls, not to mention its plethora of useful
 
 # Installation
 
-GNU coreutils ls is 4709 lines long. Pairing it with its includes rises the line count to around 11000. It's not logical to present 1/4 of the whole source of coreutils if there are only 2 lines changed in ls.c. For that reason, the way I suggest one builds even-better-ls is by downloading coreutils 8.2 and compiling it, and extracting the ls binary from the dark alley that is known as coreutils-8.2/src.
+GNU coreutils ls is 4709 lines long. Pairing it with its includes rises the line count to around 11000. It's not logical to present 1/4 of the whole source of coreutils if there are only 2 lines changed in ls.c. For that reason, the way I suggest one builds even-better-ls is by downloading coreutils 8.28 and compiling it, and extracting the ls binary from the dark alley that is known as coreutils-8.28/src.
 
 Side note: vdir and dir are also compiled during this process. Feel free to move them as well.
 
-[This may be downloaded as a shell script as well.](https://github.com/illinoisjackson/even-better-ls/blob/master/install.sh)
+[Installation script.](https://github.com/noammac/even-better-ls/blob/master/install.sh)
 
-```
-wget http://ftp.gnu.org/gnu/coreutils/coreutils-8.2.tar.xz
-tar -xf coreutils-8.2.tar.xz
-cd coreutils-8.2/src
-rm -rf ls.c
-wget http://raw.githubusercontent.com/illinoisjackson/even-better-ls/master/ls.c
-cd ..
-./configure
-make
-cd src
-mv ls /bin/ls-i # mv dir /bin/dir-i; mv vdir /bin/vdir-i
-```
-
-Additionally, one should add this to their ~/.bashrc or ~/.zsh_profile or whatever:
-
-```
-LS_COLORS=$(python /path/to/ls_colors_generator.py)
-alias ls=ls-i --color=auto
-alias dir=dir-i --color=auto
-alias vdir=vdir-i --color=auto
-```
+Additionally, one should add [this](https://github.com/noammac/even-better-ls/blob/master/append_to_profile.sh) to their ~/.bashrc or ~/.zsh_profile or whatever:
 
 # Usage
 
