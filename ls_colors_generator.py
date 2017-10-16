@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 # -*- coding: utf-8 -*-
 def get_colors():
 	ARCHIVE_COLOR 	= 85
@@ -906,4 +906,4 @@ if __name__ == "__main__":
 				lsc += compname+"="+comp+":"
 			else:
 				lsc += "*."+compname.lstrip("*.")+"="+comp+":"
-	sys.stdout.buffer.write(lsc.encode('utf-8'))
+	sys.stdout.write(lsc.encode('utf-8'))
