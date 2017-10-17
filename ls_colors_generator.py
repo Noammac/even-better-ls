@@ -1,5 +1,8 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # -*- coding: utf-8 -*-
+from __future__ import print_function
+
+
 def get_colors():
     ARCHIVE_COLOR 	= 85
     IMAGE_COLOR 	= 196
@@ -906,4 +909,6 @@ if __name__ == "__main__":
                 lsc += compname+"="+comp+":"
             else:
                 lsc += "*."+compname.lstrip("*.")+"="+comp+":"
-    sys.stdout.write(lsc.encode('utf-8'))
+    if sys.version_info[0] < 3:
+        lsc = str(lsc.encode('utf-8'))
+    print(lsc)
