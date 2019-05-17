@@ -12,7 +12,7 @@ case $OSTYPE in
         ;;
 esac
 
-$download_method ls_colors_generator.py https://raw.githubusercontent.com/illinoisjackson/even-better-ls/master/ls_colors_generator.py
+$download_method ls_colors_generator.py https://raw.githubusercontent.com/Noammac/even-better-ls/master/ls_colors_generator.py
 chmod 755 ls_colors_generator.py
 sudo mv ls_colors_generator.py ${install_location}/ls_colors_generator
 $download_method ${coreutils_version}.tar.xz https://ftp.gnu.org/gnu/coreutils/${coreutils_version}.tar.xz
@@ -20,7 +20,7 @@ tar -xf ${coreutils_version}.tar.xz
 rm ${coreutils_version}.tar.xz
 cd ${coreutils_version}/src
 rm -rf ls.c
-$download_method ls.c https://raw.githubusercontent.com/illinoisjackson/even-better-ls/master/ls.c
+$download_method ls.c https://raw.githubusercontent.com/Noammac/even-better-ls/master/ls.c
 cd ..
 ./configure $macOS_config_params
 make
